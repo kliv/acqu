@@ -49,6 +49,8 @@
 #pragma link C++ class TA2CB+;
 #pragma link C++ class TA2Taps+;
 #pragma link C++ class TA2CentralApparatus+;
+#pragma link C++ class TA2LinearPolEpics+;
+
 // Detector classes
 #pragma link C++ class TA2PlasticPID+;
 #pragma link C++ class TA2PlasticVETO+;
@@ -71,5 +73,6 @@
 #pragma link C++ class TA2CentralTrack++;
 #pragma link C++ class TA2TrackLine++;
 #pragma link C++ class TA2MwpcIntersection++;
+
 
 #endif

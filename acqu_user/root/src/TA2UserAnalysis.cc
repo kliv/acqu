@@ -17,6 +17,7 @@
 #include "TA2UserAnalysis.h"
 #include "TA2Calorimeter.h"
 #include "TA2Tagger.h"
+#include "TA2LinearPolEpics.h"
 #include "TA2CosmicCal.h"
 #include "TA2CrystalBall.h"
 #include "TA2CB.h"
@@ -40,18 +41,19 @@
 // The "standard" set is held in TA2Analysis
 enum { EA2Calorimeter,
        EA2Tagger,
-		 EA2CosmicCal,
+       EA2LinearPolEpics,
+       EA2CosmicCal,
        EA2CrystalBall,
-		 EA2CB,
-		 EA2Taps,
+       EA2CB,
+       EA2Taps,
        EA2CentralApparatus,
-		 EA2GenericApp,
+       EA2GenericApp,
        EA2Physics,
-		 EA2UserPhysics,
-		 EA2MesonPhysics,
-		 EA2BasePhysics,
-		 EA2TriggerPhysics,
-	         EA2Pi0Compton,
+       EA2UserPhysics,
+       EA2MesonPhysics,
+       EA2BasePhysics,
+       EA2TriggerPhysics,
+       EA2Pi0Compton,
        EA2MyCrystalBall, 
        EA2MyTAPS,
        EA2MyAnalysis, 
@@ -65,6 +67,7 @@ static const Map_t kKnownChild[] =
   //Apparati
   {"TA2Calorimeter",      EA2Calorimeter},
   {"TA2Tagger",           EA2Tagger},
+  {"TA2LinearPolEpics",   EA2LinearPolEpics},
   {"TA2CosmicCal",        EA2CosmicCal},
   {"TA2CrystalBall",      EA2CrystalBall},
   {"TA2CB",               EA2CB},
@@ -115,6 +118,9 @@ TA2DataManager* TA2UserAnalysis::CreateChild(const char* name, Int_t a)
    case EA2Tagger:
     //Standard tagger
     return new TA2Tagger(name, this);
+   case EA2LinearPolEpics:
+    //Standard LinearPolEpics
+    return new TA2LinearPolEpics(name, this);
    case EA2Calorimeter:
     //General calorimeter... TAPS, CB etc.
     return new TA2Calorimeter(name, this);
